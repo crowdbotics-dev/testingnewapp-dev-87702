@@ -1,20 +1,31 @@
 import React from "react";
-import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
+import { StyleSheet, View, TextInput, Button, SafeAreaView } from "react-native";
 
-const Untitled1 = () => {
+const LoginScreen = () => {
   return <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={{
-      backgroundColor: '#f0f0f1',
-      padding: 10,
-      position: 'relative',
-      flex: 1
-    }}></ScrollView>
+      <View style={styles.container}>
+        <TextInput style={styles.input} placeholder="Username" autoCapitalize="none" />
+        <TextInput style={styles.input} placeholder="Password" secureTextEntry />
+        <Button title="Login" onPress={() => {}} />
+      </View>
     </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: '100%'
+    height: "100%"
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 20
+  },
+  input: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingLeft: 10
   }
 });
-export default Untitled1;
+export default LoginScreen;
